@@ -14,6 +14,7 @@ export interface QuestionSet {
 
 export interface QuestionStats {
   id: string;
+  questionSetId: string;
   attempts: number;
   correct: number;
   incorrect: number;

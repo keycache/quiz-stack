@@ -164,6 +164,7 @@ function App() {
           <Dashboard
             attempts={attempts}
             stats={stats}
+            questionSets={questionSets}
           />
         )}
       </main>

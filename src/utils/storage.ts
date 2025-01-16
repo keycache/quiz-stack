@@ -1,3 +1,5 @@
+import { QuizAttempt, QuestionSet, QuestionStats } from '../types';
+
 export const saveQuestionSet = (questionSet: QuestionSet) => {
   const sets = getAllQuestionSets();
   sets.push(questionSet);

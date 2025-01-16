@@ -51,6 +51,7 @@ export default function Quiz({ questions, onComplete, questionSetId }: QuizProps
     // Update question stats
     const stats: QuestionStats = {
       id: currentQuestion.id,
+      questionSetId: questionSetId,
       attempts: 1,
       correct: isCorrect ? 1 : 0,
       incorrect: isCorrect ? 0 : 1,
