@@ -100,6 +100,15 @@ export default function Quiz({ questions, onComplete, questionSetId }: QuizProps
               Show Options
             </button>
           )}
+          {state.hasAnswered && (
+            <button
+              onClick={handleNext}
+              className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 border border-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              <ChevronRight className="w-4 h-4" />
+              {state.currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+            </button>
+          )}
         </div>
       </div>
 
@@ -129,26 +138,11 @@ export default function Quiz({ questions, onComplete, questionSetId }: QuizProps
         )}
       </div>
 
-      {state.hasAnswered && (
-        <div className="mb-6 p-4 bg-gray-50 rounded-md">
-          <div className="flex items-start gap-2">
-            <AlertCircle className="w-5 h-5 text-blue-500 mt-0.5" />
-            <div>
-              <h3 className="font-semibold mb-2">Explanation</h3>
-              <p className="text-gray-700">{currentQuestion.explanation}</p>
-            </div>
-          </div>
+      {state.hasAnswered && currentQuestion.explanation && (
+        <div className="mt-4 p-4 bg-blue-50 rounded-md flex items-start gap-2">
+          <AlertCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+          <p className="text-sm text-blue-700">{currentQuestion.explanation}</p>
         </div>
-      )}
-
-      {state.hasAnswered && (
-        <button
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 flex items-center justify-center gap-2"
-          onClick={handleNext}
-        >
-          {state.currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
-          <ChevronRight className="w-4 h-4" />
-        </button>
       )}
     </div>
   );
