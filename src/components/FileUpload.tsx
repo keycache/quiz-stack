@@ -42,14 +42,14 @@ export default function FileUpload() {
   }, []);
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+    <div className="w-full max-w-md mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-colors duration-200">
+      <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
         <div className="flex flex-col items-center justify-center pt-5 pb-6">
-          <Upload className="w-10 h-10 mb-3 text-gray-400" />
-          <p className="mb-2 text-sm text-gray-500">
+          <Upload className="w-10 h-10 mb-3 text-gray-400 dark:text-gray-500" />
+          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
             <span className="font-semibold">Click to upload</span> or drag and drop
           </p>
-          <p className="text-xs text-gray-500">JSON files only</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">JSON files only</p>
         </div>
         <input
           type="file"
